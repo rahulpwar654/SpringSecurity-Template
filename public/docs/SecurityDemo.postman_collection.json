@@ -1,0 +1,168 @@
+{
+	"info": {
+		"_postman_id": "4ca4e1c2-f5d8-4be5-9594-88ab832125ea",
+		"name": "SecurityDemo",
+		"description": "Demo for Spring security",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "117517"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"fullName\": \"Rahul Pawar\",\r\n  \"email\": \"rahul@gmail.com\",\r\n  \"password\": \"1234\",\r\n  \"role\": \"\",\r\n  \"isActive\": true,\r\n  \"isNotLocked\": true,\r\n  \"isChangePassword\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8083/api/auth/register"
+			},
+			"response": []
+		},
+		{
+			"name": "Authenticate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"rahul@gmail.com\",\r\n  \"password\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8083/api/auth/authenticate"
+			},
+			"response": []
+		},
+		{
+			"name": "Add products",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyYWh1bEBnbWFpbC5jb20iLCJpYXQiOjE3NDQyMTA4NjYsImV4cCI6MTc0NDI5NzI2Nn0.21KnC6F1n31BF5mv__9fJ7o3eHY4Rk5HsT6oOiugBiM",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Test1",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "3000",
+							"type": "text"
+						},
+						{
+							"key": "images",
+							"type": "file",
+							"src": "/C:/Users/rahul/OneDrive/Desktop/XfileManager/ic_launcher-playstore.png"
+						}
+					]
+				},
+				"url": "http://localhost:8083/products"
+			},
+			"response": []
+		},
+		{
+			"name": "get all Products",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyYWh1bEBnbWFpbC5jb20iLCJpYXQiOjE3NDQyMTA4NjYsImV4cCI6MTc0NDI5NzI2Nn0.21KnC6F1n31BF5mv__9fJ7o3eHY4Rk5HsT6oOiugBiM",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost:8083/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"products"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "page",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "size",
+							"value": "5",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get Product By Id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyYWh1bEBnbWFpbC5jb20iLCJpYXQiOjE3NDQyMTA4NjYsImV4cCI6MTc0NDI5NzI2Nn0.21KnC6F1n31BF5mv__9fJ7o3eHY4Rk5HsT6oOiugBiM",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": "http://localhost:8083/products/1"
+			},
+			"response": []
+		}
+	]
+}
