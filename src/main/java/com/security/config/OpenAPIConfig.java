@@ -13,26 +13,26 @@ import io.swagger.v3.oas.annotations.servers.Server;
 @OpenAPIDefinition(
         info = @Info(
                 contact = @Contact(
-                        name = "Suporte",
-                        email = "suporte@exemplo.com",
-                        url = "https://exemplo.com"
+                        name = "Support",
+                        email = "support@example.com",
+                        url = "https://example.com"
                 ),
                 description = "JWT Security Api Documentation",
                 title = "JWT Security Api",
                 version = "1.0",
                 license = @License(
-                        name = "Licença da API",
-                        url = "https://exemplo.com/licenca"
+                        name = "API License",
+                        url = "https://example.com/licenca"
                 ),
-                termsOfService = "https://exemplo.com/termos"
+                termsOfService = "https://example.com/termos"
         ),
         servers = {
                 @Server(
-                        description = "Ambiente Local",
+                        description = "Local Environment",
                         url = "http://localhost:8084"
                 ),
                 @Server(
-                        description = "Ambiente de Produção",
+                        description = "Production Environment",
                         url = "https://api.exemplo.com"
                 )
         },

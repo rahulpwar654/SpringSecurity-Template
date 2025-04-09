@@ -16,7 +16,7 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank(message = "O nome é obrigatório")
+    @NotBlank(message = "Name is mandatory")
     private String name;
 
     @ElementCollection
@@ -24,7 +24,7 @@ public class Product {
     @Column(name = "image_url")
     private List<String> images;
 
-    @NotBlank(message = "O preço é obrigatório")
+    @NotBlank(message = "Price is mandatory")
     private String price;
 }
 

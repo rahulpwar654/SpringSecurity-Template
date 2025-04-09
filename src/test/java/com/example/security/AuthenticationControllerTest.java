@@ -17,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.mockito.MockitoAnnotations;
 import org.springframework.http.ResponseEntity;
 
-class AuthenticationControllerTest {
+class   AuthenticationControllerTest {
 
     @Mock
     private AuthenticationService authenticationService;

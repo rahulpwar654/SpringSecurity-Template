@@ -87,16 +87,14 @@ public class ProductService {
                 // to avoid duplicate names add UUID in name
                 String fileName = UUID.randomUUID() + "_" + file.getOriginalFilename();
 
-                // Caminho onde a imagem será salva
                 Path path = Paths.get(IMAGE_DIR + fileName);
 
-                // Criando diretório se não existir
                 File directory = new File(IMAGE_DIR);
                 if (!directory.exists()) {
                     directory.mkdirs();
                 }
 
-                // Salvando a imagem no disco
+
                 file.transferTo(path.toFile());
 
                 return "/images/" + fileName;
